@@ -5,20 +5,20 @@
 class RailsKit < Formula
   desc "CLI toolkit for exploring Rails codebases without loading Rails"
   homepage "https://github.com/janstol/rails-kit"
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/janstol/rails-kit/releases/download/v0.1.0/rails-kit_darwin_amd64.tar.gz"
-      sha256 "eaf0495a716302219ca22007bdff73896b3c1954dd9583d4f6ec7b700ece800c"
+      url "https://github.com/janstol/rails-kit/releases/download/v0.2.0/rails-kit_darwin_amd64.tar.gz"
+      sha256 "8a05130ec0f5afdd5813f7ff30e974293952dc87231480b8d9ba588c14c01009"
 
       define_method(:install) do
         bin.install "rails-kit"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/janstol/rails-kit/releases/download/v0.1.0/rails-kit_darwin_arm64.tar.gz"
-      sha256 "29321c467ec01d61d9ef94bd86415ab30073c74ecb34d776fe06370f413d8e94"
+      url "https://github.com/janstol/rails-kit/releases/download/v0.2.0/rails-kit_darwin_arm64.tar.gz"
+      sha256 "5db5335c949d8445fe3d9cd0b0ffe3d190205aedd4c9ee593f3bd5e6fee69e44"
 
       define_method(:install) do
         bin.install "rails-kit"
@@ -28,15 +28,15 @@ class RailsKit < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/janstol/rails-kit/releases/download/v0.1.0/rails-kit_linux_amd64.tar.gz"
-      sha256 "90e2677123da6b5e55cbdf82080385250ddcce193d65ebe58b24c52323cb533d"
+      url "https://github.com/janstol/rails-kit/releases/download/v0.2.0/rails-kit_linux_amd64.tar.gz"
+      sha256 "c96d98fda92085c246895af897a3c82fc342b1406e4dd5250deb3c475db36064"
       define_method(:install) do
         bin.install "rails-kit"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/janstol/rails-kit/releases/download/v0.1.0/rails-kit_linux_arm64.tar.gz"
-      sha256 "58a496e9969d2bccfb6eb507e657472909ab48aa81a77f84c3789a9e8c487548"
+      url "https://github.com/janstol/rails-kit/releases/download/v0.2.0/rails-kit_linux_arm64.tar.gz"
+      sha256 "b201a9977c6d05b4878fc0df21213010e8f98b87a62476a81dbd126701e6a0c4"
       define_method(:install) do
         bin.install "rails-kit"
       end
