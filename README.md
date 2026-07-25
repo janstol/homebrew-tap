@@ -1,18 +1,27 @@
 # Janstol Tap
 
-## How do I install these formulae?
+## Installation
 
-`brew install janstol/tap/<formula>`
+Install rails-kit directly from this tap:
 
-Or `brew tap janstol/tap` and then `brew install <formula>`.
+```sh
+brew install --cask janstol/tap/rails-kit
+```
 
-Or, in a `brew bundle` `Brewfile`:
+Or add the tap first:
+
+```sh
+brew tap janstol/tap
+brew install --cask rails-kit
+```
+
+In a `Brewfile`:
 
 ```ruby
 tap "janstol/tap"
-brew "<formula>"
+cask "rails-kit"
 ```
 
 ## Documentation
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+See the [rails-kit repository](https://github.com/janstol/rails-kit) for usage and the [Homebrew documentation](https://docs.brew.sh) for package-management help.
