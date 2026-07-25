@@ -5,26 +5,22 @@ cask "rails-kit" do
   on_macos do
     on_intel do
       sha256 "26218842736e4334879e5f8a8fab1a489749d4cf6641d138f95a6ae7b649aca7"
-      url "https://github.com/janstol/rails-kit/releases/download/v0.3.0/rails-kit_darwin_amd64.tar.gz",
-        verified: "github.com/janstol/rails-kit/"
+      url "https://github.com/janstol/rails-kit/releases/download/v#{version}/rails-kit_darwin_amd64.tar.gz"
     end
     on_arm do
       sha256 "dc201fbfc8962bc1b013db26e38e20595c6d19d5c9544d4bbd06bc8da76b0441"
-      url "https://github.com/janstol/rails-kit/releases/download/v0.3.0/rails-kit_darwin_arm64.tar.gz",
-        verified: "github.com/janstol/rails-kit/"
+      url "https://github.com/janstol/rails-kit/releases/download/v#{version}/rails-kit_darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
       sha256 "25ce88895469daade4d1503b279c2d9b1f647711dcf797765e71e2a2b9c9f620"
-      url "https://github.com/janstol/rails-kit/releases/download/v0.3.0/rails-kit_linux_amd64.tar.gz",
-        verified: "github.com/janstol/rails-kit/"
+      url "https://github.com/janstol/rails-kit/releases/download/v#{version}/rails-kit_linux_amd64.tar.gz"
     end
     on_arm do
       sha256 "d3688938fe49a21449a73afc8c08a7bbea052b4e152060fa5a798daae95bffb2"
-      url "https://github.com/janstol/rails-kit/releases/download/v0.3.0/rails-kit_linux_arm64.tar.gz",
-        verified: "github.com/janstol/rails-kit/"
+      url "https://github.com/janstol/rails-kit/releases/download/v#{version}/rails-kit_linux_arm64.tar.gz"
     end
   end
 
@@ -39,9 +35,7 @@ cask "rails-kit" do
   binary "rails-kit"
 
   postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/rails-kit"]
-    end
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/rails-kit"] if OS.mac?
   end
 
   # No zap stanza required
