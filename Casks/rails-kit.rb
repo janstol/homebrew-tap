@@ -3,24 +3,23 @@ cask "rails-kit" do
   version "0.4.0"
 
   on_macos do
-    on_intel do
-      sha256 "9de701f217857f015bb0cacc15f529678b6e190a955d449f0ab4f0010030ac28"
-      url "https://github.com/janstol/rails-kit/releases/download/v#{version}/rails-kit_darwin_amd64.tar.gz"
-    end
     on_arm do
       sha256 "53fd226df1ee5e434150bb4c1ff59f8b3a65b4822a24e83b17cd7081a5f69560"
       url "https://github.com/janstol/rails-kit/releases/download/v#{version}/rails-kit_darwin_arm64.tar.gz"
     end
-  end
-
-  on_linux do
     on_intel do
-      sha256 "2a4f92610f916dc92c70125ccab2ac0caea25f383423470d6dafbe4aaabf627a"
-      url "https://github.com/janstol/rails-kit/releases/download/v#{version}/rails-kit_linux_amd64.tar.gz"
+      sha256 "9de701f217857f015bb0cacc15f529678b6e190a955d449f0ab4f0010030ac28"
+      url "https://github.com/janstol/rails-kit/releases/download/v#{version}/rails-kit_darwin_amd64.tar.gz"
     end
+  end
+  on_linux do
     on_arm do
       sha256 "f402ded1d41a6ed5345963b192a59cfe5c93fa1d112f63b3a1882220615673dc"
       url "https://github.com/janstol/rails-kit/releases/download/v#{version}/rails-kit_linux_arm64.tar.gz"
+    end
+    on_intel do
+      sha256 "2a4f92610f916dc92c70125ccab2ac0caea25f383423470d6dafbe4aaabf627a"
+      url "https://github.com/janstol/rails-kit/releases/download/v#{version}/rails-kit_linux_amd64.tar.gz"
     end
   end
 
@@ -39,5 +38,4 @@ cask "rails-kit" do
   end
 
   # No zap stanza required
-
 end
