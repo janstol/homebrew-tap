@@ -33,8 +33,10 @@ cask "rails-kit" do
 
   binary "rails-kit"
 
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/rails-kit"] if OS.mac?
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/rails-kit"]
+    end
   end
 
   # No zap stanza required
