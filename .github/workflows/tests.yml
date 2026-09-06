@@ -10,7 +10,14 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [ macos-15-intel, macos-26 ]
+        # macos-15-intel is deliberately excluded: gmp (a build dependency of
+        # shellcheck, needed by `brew style`) has no x86_64_sequoia bottle, so
+        # that runner always compiles gmp from source against gmplib.org /
+        # ftpmirror.gnu.org -- external mirrors outside Homebrew's own bottle
+        # CDN -- which has proven unreliable and fails the job on that step
+        # alone, unrelated to the cask itself. Revisit if an x86_64_sequoia
+        # gmp bottle is published upstream.
+        os: [ macos-26 ]
         include:
           - os: ubuntu-latest
             container: ghcr.io/homebrew/brew:main
